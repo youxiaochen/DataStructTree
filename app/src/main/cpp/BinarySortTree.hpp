@@ -79,22 +79,6 @@ BinarySortTreeNode* BinarySortTree::removeLeftMinNode(BinarySortTreeNode *node, 
         *successor = node;
         return node->right;
     }
-/*
-    if (node->right->left) {
-        BinarySortTreeNode *parentNode = node->right;
-        node = node->right->left;
-        while (node->left) {
-            parentNode = node;
-            node = node->left;
-        }
-        parentNode->left = node->right;
-        return node;
-    } else {
-        BinarySortTreeNode *right = node->right;
-        node->right = right->right;
-        return right;
-    }
-*/
 }
 
 BinarySortTreeNode* BinarySortTree::removeNode(BinarySortTreeNode *node, int data) {
