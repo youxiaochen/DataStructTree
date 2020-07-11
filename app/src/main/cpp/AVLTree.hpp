@@ -154,6 +154,7 @@ AVLTreeNode* AVLTree::removeRightMaxNode(AVLTreeNode *node, AVLTreeNode **succes
     if (node->right) {
         node->right = removeRightMaxNode(node->right, successor);
         node = node->checkRightRotate();
+        node->calculateHeight();
         return node;
     } else {
         *successor = node;
@@ -165,6 +166,7 @@ AVLTreeNode* AVLTree::removeLeftMinNode(AVLTreeNode *node, AVLTreeNode **success
     if (node->left) {
         node->left = removeLeftMinNode(node->left, successor);
         node = node->checkLeftRotate();
+        node->calculateHeight();
         return node;
     } else {
         *successor = node;
