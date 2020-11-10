@@ -5,8 +5,6 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.TreeMap;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     static {
@@ -24,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.bt4).setOnClickListener(this);
         findViewById(R.id.bt5).setOnClickListener(this);
         findViewById(R.id.bt6).setOnClickListener(this);
+
 
     }
 

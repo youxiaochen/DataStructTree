@@ -4,10 +4,22 @@
 
 using namespace std;
 
+#include<sys/mman.h>
+#include<sys/types.h>
+#include<fcntl.h>
+#include<stdio.h>
+#include<unistd.h>
+#include <errno.h>
+
 #include "BinaryTree.hpp"
 #include "BinarySortTree.hpp"
 #include "AVLTree.hpp"
+#include "AVLMap.hpp"
 
+#include <set>
+#include <map>
+#include <algorithm>
+#include <list>
 
 extern "C" {
 
@@ -94,24 +106,59 @@ extern "C" {
         tree.remove(15);
         tree.levelShow();
         LOGD("size: %d", tree.size());
+
     }
 
     JNIEXPORT void JNICALL
     Java_you_chen_ctest_MainActivity_test3(JNIEnv *env, jobject /* this */) {
+        AVLTree tree;
+        tree.add(20);
+        tree.add(10);
+        tree.add(40);
+        tree.add(1);
+        tree.add(15);
+        tree.add(25);
+        tree.add(50);
+        tree.add(21);
+        tree.add(30);
+
+        tree.levelShow();
+
+        tree.remove(20);
+
+        tree.levelShow();
+
+        tree.remove(21);
+        tree.levelShow();
+
+        map<string, string> ss;
+        int va = ss.erase("abc");
+
+        auto acc = ss.find("abc");
+
+        ss.end();
 
     }
 
     JNIEXPORT void JNICALL
     Java_you_chen_ctest_MainActivity_test4(JNIEnv *env, jobject /* this */) {
+        AVLMap<int, int> mapp;
+        mapp.put(15, 16);
+        mapp.put(16, 15);
 
+        LOGD("AVLMap size %d", mapp.size());
     }
-
-
 
     JNIEXPORT void JNICALL
     Java_you_chen_ctest_MainActivity_test5(JNIEnv *env, jobject /* this */) {
 
+
     }
+
+    void test2() {
+        
+    }
+
 
     JNIEXPORT void JNICALL
     Java_you_chen_ctest_MainActivity_test6(JNIEnv *env, jobject /* this */) {
